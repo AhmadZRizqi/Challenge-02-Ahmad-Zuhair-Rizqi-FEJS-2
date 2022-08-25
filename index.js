@@ -144,22 +144,73 @@
 // No.5 END --------------------------------------------------
 
 // No.6 ------------------------------------------------------
-function getAngkaTerbesarKedua(dataAngka) {
-    if (typeof dataAngka == 'object') {
-        dataAngka.sort(function(a,b){
-            return b-a
-        })
-        terbesarKedua = dataAngka[1];
-        return terbesarKedua
-    } else if(dataAngka == null) {
-        return "Error: Data tidak boleh kosong"
+// function getAngkaTerbesarKedua(dataAngka) {
+//     if (typeof dataAngka == 'object') {
+//         dataAngka.sort(function(a,b){
+//             return b-a
+//         })
+//         terbesarKedua = dataAngka[1];
+//         return terbesarKedua
+//     } else if(dataAngka == null) {
+//         return "Error: Data tidak boleh kosong"
+//     } else {
+//         return "Error: Tipe data salah, harus berupa object"
+//     }
+// }
+    
+// const dataAngka = [9,4,7,7,4,3,2,2,8]
+// console.log(getAngkaTerbesarKedua(dataAngka))
+// console.log(getAngkaTerbesarKedua(0))
+// console.log(getAngkaTerbesarKedua())
+// No.6 END --------------------------------------------------
+
+// No.7 ------------------------------------------------------
+function hitungTotalPenjualan(dataPenjualan){
+    let totalPenjualan = 0;
+    if (typeof dataPenjualan == 'object'){
+        for (let i = 0; i < dataPenjualanPakAldi.length; i++){
+            totalPenjualan = dataPenjualanPakAldi[i].totalTerjual + totalPenjualan
+        }
+        return totalPenjualan
+    } else if (dataPenjualan == null){
+        return 'Error: Data parameter tidak boleh kosong'
     } else {
-        return "Error: Tipe data salah, harus berupa object"
+        return 'Error: Tipe data parameter salah, harus berupa object'
     }
 }
     
-const dataAngka = [9,4,7,7,4,3,2,2,8]
-console.log(getAngkaTerbesarKedua(dataAngka))
-console.log(getAngkaTerbesarKedua(0))
-console.log(getAngkaTerbesarKedua())
-// No.6 END --------------------------------------------------
+const dataPenjualanPakAldi = [
+    {
+      namaProduct : 'Sepatu Futsal Nike Vapor Academy 8',
+      hargaSatuan: 760000,
+      kategori : "Sepatu Sport",
+      totalTerjual : 90,
+    },
+    {
+      namaProduct : 'Sepatu Warrior Tristan Black Brown High',
+      hargaSatuan: 960000,
+      kategori : "Sepatu Sneaker",
+      totalTerjual : 37,
+    },
+    {
+      namaProduct : 'Sepatu Warrior Tristan Maroon High ',
+      kategori : "Sepatu Sneaker",
+      hargaSatuan: 360000,
+      totalTerjual : 90,
+    },
+    {
+      namaProduct : 'Sepatu Warrior Rainbow Tosca Corduroy',
+      hargaSatuan: 120000,
+      kategori : "Sepatu Sneaker",
+      totalTerjual : 90,
+    }
+  ]
+
+  console.log(hitungTotalPenjualan(dataPenjualanPakAldi))
+  console.log(hitungTotalPenjualan(0))
+  console.log(hitungTotalPenjualan())
+// No.7 END --------------------------------------------------
+
+// No.8 ------------------------------------------------------
+
+// No.8 END --------------------------------------------------
