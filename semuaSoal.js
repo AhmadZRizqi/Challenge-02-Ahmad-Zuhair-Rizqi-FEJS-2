@@ -278,7 +278,6 @@ function getInfoPenjualan(dataPenjualan){
     }
 }
 
-
 const dataPenjualanNovel = [
     {
       idProduct: 'BOOK002421',
