@@ -69,20 +69,20 @@ function isValidPassword(email){
             if (upperCase.test(email) == true){
                 if (lowerCase.test(email) == true){
                     if (numbers.test(email) == true){
-                        return true + " Karena memenuhi requirement, " + email + " teridiri dari setidaknya 8 karakter dengan 1 huruf besar, 1 huruf kecil, dan 1 angka"
+                        return true + " (Karena memenuhi requirement, " + email + " teridiri dari setidaknya 8 karakter dengan 1 huruf besar, 1 huruf kecil, dan 1 angka)"
                     } else {
                         return false + " (Karena " + email + " tidak memiliki angka)"
                     }
                 } else {
-                    return false + " Karena "+email+" tidak memiliki huruf kecil"
+                    return false + " (Karena "+email+" tidak memiliki huruf kecil)"
                 }
             } else {
-                return false + " Karena "+email+" tidak memiliki huruf besar"
+                return false + " (Karena "+email+" tidak memiliki huruf besar)"
             }
         } else if(uniqueChara.test(email) == true && upperCase.test(email) == false && lowerCase.test(email) == false) {
-            return false + " Karena "+email+" hanya terdiri dari unique characters"
+            return false + " (Karena "+email+" hanya terdiri dari unique characters)"
         } else {
-            return false + " Karena "+email+" kurang dari 8 huruf"
+            return false + " (Karena "+email+" kurang dari 8 huruf)"
         }
     } else {
         return "ERROR: Password tidak boleh kosong"
@@ -134,6 +134,8 @@ function getSplitName(personName){
             return "Error: Nama lebih dari 3 suku kata"
         }
 
+    } else if (personName == null) {
+        return "Error: Data tidak boleh kosong"
     } else {
         return "Error: Tipe data tidak boleh selain string"
     }
@@ -144,6 +146,7 @@ console.log(getSplitName('Dwi Kuncoro'))
 console.log(getSplitName('Aurora'))
 console.log(getSplitName('Aurora Aurelia Sukma Darma'))
 console.log(getSplitName(0))
+console.log(getSplitName())
 // No.5 END --------------------------------------------------
 
 // No.6 ------------------------------------------------------
